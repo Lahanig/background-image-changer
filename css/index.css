@@ -1,0 +1,87 @@
+@font-face {
+    font-family: zh-cn;
+    src: url(../font/zh-cn.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'zh-cn';
+}
+
+body {
+    background: url(../img/bg.png) no-repeat center;
+    width: 100vw;
+    height: 100vh;
+    /* background-clip: ; */
+    background-size: cover;
+}
+
+.main {
+    width: 100%;
+    max-width: 400px;
+
+    display: flex;
+    
+    margin: 0 auto;
+    padding: 15vh 0;
+}
+
+.main-inner {
+    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    padding: 1rem;
+}
+
+.main-inner-header {
+    display: flex;
+
+    font-size: 1.2em;
+}
+
+.main-inner-body {
+    margin-top: 1rem;
+
+    font-size: 1em;
+}
+
+.main-inner-body input{
+    width: 100%;
+}
+
+.main-inner-body label {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.main-inner-body button {
+    margin-top: 1rem;
+
+    padding: 1.1em;
+
+    background-color: rgb(166, 84, 243);
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    color: #eee;
+
+    transition: all ease-out .2s;
+}
+
+.main-inner-body button:hover {
+    background-color: rgb(154, 61, 241);
+    
+    color: #dddddd;
+}
