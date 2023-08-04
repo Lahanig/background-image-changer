@@ -10,6 +10,8 @@ class Storage {
     }
 
     setBackground() {
+        if (this.backgroundUrl === null) return
+
         let body = document.querySelector("body")
 
         body.style.background = `url("${this.backgroundUrl}") no-repeat center`
