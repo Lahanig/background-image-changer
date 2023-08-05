@@ -16,6 +16,8 @@ body {
     height: 100vh;
     /* background-clip: ; */
     background-size: cover;
+
+    transition: all ease-in-out .3s;
 }
 
 .main {
