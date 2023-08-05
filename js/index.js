@@ -7,6 +7,19 @@ if (!background) {
 class Storage {
     constructor() {
         this.backgroundUrl = localStorage.getItem("background")
+        this.url = document.querySelector("#urlInput")
+
+        this.url.addEventListener('change', (e) => {
+            const file = e.target.files[0],
+                 reader = new FileReader()
+            reader.onloadend = () => {
+                // convert file to base64 String
+                const base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
+                // store file
+                localStorage.setItem('background', base64String)
+            }
+            reader.readAsDataURL(file)
+        })
     }
 
     setBackground() {
@@ -20,23 +33,9 @@ class Storage {
     }
 
     updateBackground() {
-        let body = document.querySelector("body"),
-            url = document.querySelector("#urlInput")
-
-        url.addEventListener('change', (e) => {
-            const file = e.target.files[0],
-                 reader = new FileReader()
-            reader.onloadend = () => {
-                // convert file to base64 String
-                const base64String = reader.result.replace('data:', '').replace(/^.+,/, '')
-                // store file
-                localStorage.setItem('background', base64String)
-            }
-            reader.readAsDataURL(file)
-        })
-
-        let imageUrl = localStorage.getItem('background')
-
+        let body = document.querySelector("body"),    
+            imageUrl = localStorage.getItem('background')
+        
         // display image
         body.style.background = `url(data:image/png;base64,${imageUrl}) no-repeat center`
         body.style.backgroundSize = "cover"
