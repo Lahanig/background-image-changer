@@ -85,3 +85,24 @@ body {
     
     color: #dddddd;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    text-decoration: underline;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    color: #333;
+}
+
+.custom-file-upload:hover {
+    color: #424242;
+}
